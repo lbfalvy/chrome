@@ -1,0 +1,21 @@
+/***************** Configuration for the Firefox page *****************/
+body[lwt-newtab="true"] aside[is="colorways-card"] { display: none; }
+/* other devices */
+body[lwt-newtab="true"] details[is="tab-pickup-container"] {
+	grid-column: 1 / span 2 !important;
+	padding-left: 0 !important;
+	padding-bottom: 0 !important;
+}
+body[lwt-newtab="true"] details[is="tab-pickup-container"] > summary { display: none !important; }
+body[lwt-newtab="true"] details[is="tab-pickup-container"] ol.synced-tabs-list {
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
+}
+/* recently closed */
+body[lwt-newtab="true"] details[is="recently-closed-tabs-container"] {
+	grid-column: 1 / span 2 !important;
+	padding-left: 0 !important;
+}
+body[lwt-newtab="true"] details[is="recently-closed-tabs-container"] > summary { display: none !important; }
+body[lwt-newtab="true"] details[is="recently-closed-tabs-container"] li.closed-tab-li { padding: 0 !important; }
+body[lwt-newtab="true"] { padding: 0 !important; }
