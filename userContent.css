@@ -1,21 +1,19 @@
-/***************** Configuration for the Firefox page *****************/
-body[lwt-newtab="true"] aside[is="colorways-card"] { display: none; }
-/* other devices */
-body[lwt-newtab="true"] details[is="tab-pickup-container"] {
-	grid-column: 1 / span 2 !important;
-	padding-left: 0 !important;
-	padding-bottom: 0 !important;
+/***************** Tab-bar settings *****************/
+/* large font, slim tab-bar */
+html {	
+    font-size: 13px !important;
+    --tab-min-height: calc(1em + 10px) !important;
 }
-body[lwt-newtab="true"] details[is="tab-pickup-container"] > summary { display: none !important; }
-body[lwt-newtab="true"] details[is="tab-pickup-container"] ol.synced-tabs-list {
-	margin-block-start: 0 !important;
-	margin-block-end: 0 !important;
+.tab-label {
+    line-height: 1.2em !important;
 }
-/* recently closed */
-body[lwt-newtab="true"] details[is="recently-closed-tabs-container"] {
-	grid-column: 1 / span 2 !important;
-	padding-left: 0 !important;
+.tab-label-container {
+    height: 1.2em !important;
 }
-body[lwt-newtab="true"] details[is="recently-closed-tabs-container"] > summary { display: none !important; }
-body[lwt-newtab="true"] details[is="recently-closed-tabs-container"] li.closed-tab-li { padding: 0 !important; }
-body[lwt-newtab="true"] { padding: 0 !important; }
+/* Replace PLAYING text with blue underbar */
+tab[soundplaying] .tab-background {
+    border-bottom: 1px solid rgb(0,221,255) !important;
+}
+.tab-icon-sound-playing-label {
+    display: none;
+}
