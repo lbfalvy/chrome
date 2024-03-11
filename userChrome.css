@@ -10,6 +10,7 @@ html {
 .tab-label-container {
     height: 1.2em !important;
 }
+
 /* Replace PLAYING text with blue underbar */
 tab[soundplaying] .tab-background {
     border-bottom: 1px solid rgb(0,221,255) !important;
@@ -17,3 +18,36 @@ tab[soundplaying] .tab-background {
 .tab-icon-sound-playing-label {
     display: none;
 }
+
+/* NOTABS - hide tab-bar altogether, using tree-style tab */
+#TabsToolbar, #TabsToolbar > *  {
+    /* all transition timing acts as delay */
+    transition-timing-function: step-end;
+}
+/* focus not on tabs, titlebar buttons explicitly excluded from tabs */
+#TabsToolbar:not(:hover):not(:focus-within),
+#TabsToolbar:has(.titlebar-buttonbox-container:hover) {
+    max-height: 1px !important;
+    background: #008 !important;
+    /* hide after a grace period */
+    transition: max-height 2s step-end, background 2.1s step-end;
+}
+.titlebar-buttonbox-container {
+    /* titlebar buttons positioned independently */
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 40px;
+}
+#TabsToolbar:is(:hover, :focus-within) {
+    max-height: 100vh; /* Show if focused or hover, instantly */
+    transition-duration: 0s;
+}
+#TabsToolbar:not(:hover):not(:focus-within) > :not(.titlebar-buttonbox-container) {
+    visibility: hidden !important;
+    transition: visibility 2s step-end;
+}
+#nav-bar, #TabsToolbar {
+    margin-right: 100px; /* Make room for titlebar buttons *?
+}
+/* END OF NOTABS */
