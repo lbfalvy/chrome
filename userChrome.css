@@ -25,8 +25,7 @@ tab[soundplaying] .tab-background {
     transition-timing-function: step-end;
 }
 /* focus not on tabs, titlebar buttons explicitly excluded from tabs */
-#TabsToolbar:not(:hover):not(:focus-within),
-#TabsToolbar:has(.titlebar-buttonbox-container:hover) {
+#TabsToolbar {
     max-height: 1px !important;
     background: #008 !important;
     /* hide after a grace period */
@@ -39,11 +38,7 @@ tab[soundplaying] .tab-background {
     top: 0;
     height: 40px;
 }
-#TabsToolbar:is(:hover, :focus-within) {
-    max-height: 100vh; /* Show if focused or hover, instantly */
-    transition-duration: 0s;
-}
-#TabsToolbar:not(:hover):not(:focus-within) > :not(.titlebar-buttonbox-container) {
+#TabsToolbar > :not(.titlebar-buttonbox-container) {
     visibility: hidden !important;
     transition: visibility 2s step-end;
 }
